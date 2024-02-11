@@ -7,3 +7,5 @@ Script to download M4A files from YouTube playlist and move to another folder.
 ```
 ./sync_yt [playlist ID] [folder to move to]
 ```
+
+Playlist must be public or unlisted to work.
