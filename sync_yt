@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+WORKING_DIR=.
+PLAYLIST_ID=$1
+RECORDINGS_DIR=$2
+
+yt-dlp "$PLAYLIST_ID" \
+  --audio-format m4a \
+  --download-archive "$WORKING_DIR/downloaded/$PLAYLIST_ID.txt" \
+  -o "$WORKING_DIR/output/%(title)s.%(ext)s" \
+  -x
+
+if  [ -d "$WORKING_DIR/output/*.m4a" ]
+  then mv $WORKING_DIR/output/*.m4a "$RECORDINGS_DIR"
+fi
