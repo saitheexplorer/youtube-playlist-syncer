@@ -4,6 +4,12 @@ WORKING_DIR=.
 PLAYLIST_ID=$1
 RECORDINGS_DIR=$2
 
+if ! command -v yt-dlp &> /dev/null
+then
+    echo "yt-dlp must be installed."
+    exit 1
+fi
+
 yt-dlp "$PLAYLIST_ID" \
   --audio-format m4a \
   --download-archive "$WORKING_DIR/downloaded/$PLAYLIST_ID.txt" \

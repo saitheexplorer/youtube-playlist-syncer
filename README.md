@@ -8,4 +8,5 @@ Script to download M4A files from YouTube playlist and move to another folder.
 ./sync_yt [playlist ID] [folder to move to]
 ```
 
-Playlist must be public or unlisted to work.
+- Requires [yt-dlp](https://github.com/yt-dlp/yt-dlp) to be installed.
+- Playlist must be public or unlisted to work.
