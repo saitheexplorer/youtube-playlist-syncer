@@ -16,4 +16,7 @@ yt-dlp "$PLAYLIST_ID" \
   -o "$WORKING_DIR/output/%(title)s.%(ext)s" \
   -x
 
-ls "$WORKING_DIR"/output/*.m4a | xargs -I % mv % "$RECORDINGS_DIR"
+for f in "$WORKING_DIR"/output/*.m4a; do
+  echo "Moving $f to $RECORDINGS_DIR..."
+  mv "$f" "$RECORDINGS_DIR"
+done
